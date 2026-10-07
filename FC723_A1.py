@@ -1,48 +1,61 @@
-
-#this class purpose is to find the greatest common diviser of 2 intigers 
-#using the Euclidean Algorith
+# This class finds the Greatest Common Divisor (GCD) of two integers
+# using the Euclidean Algorithm.
 class GCD:
-#initialising the function and calling it find GCD
-    
-   def find_GCD (self ,a, b):
-       #storing the value to variables 
-        self.a = a
-        self.b = b
-        #start looping until b becomes 0
-        #when b becomes 0 a have the GCD
+
+    # Find the GCD of two numbers.
+    def find_gcd(self, a, b):
+
+        # Continue until b becomes 0.
+        # When b becomes 0, a contains the GCD.
         while b != 0:
-           # caucilate the remainder wich is a divided by b
-            rem = a % b
-           #switch the value of a to b (the swaping part)
+
+            # Calculate the remainder when a is divided by b.
+            remainder = a % b
+
+            # Replace a with b.
             a = b
-           #replaceing b with the remainder
-            b = rem
-        #at this part a has the GCD 
+
+            # Replace b with the remainder.
+            b = remainder
+
+        # Return the GCD.
         return a
-    
-#take input from the user for the first number
-num1 = input('Enter you first number')
-#take input from the user for the second
-num2 = input('Enter your second number')
-#checking if both inputs are digits 
+
+
+# Take input from the user for the first number.
+num1 = input("Enter your first number: ")
+
+# Take input from the user for the second number.
+num2 = input("Enter your second number: ")
+
+# Check if both inputs contain only digits.
 if num1.isdigit() and num2.isdigit():
-    #conversting strings into integers
+
+    # Convert the input strings into integers.
     num1 = int(num1)
     num2 = int(num2)
-    #check if both numbers are positive
+
+    # Check if both numbers are positive.
     if num1 > 0 and num2 > 0:
-        #create an object of the GCD 
-        x = GCD()
-        #call the function to find the GCD for the tow numbers
-        result = x.find_GCD(num1 , num2)
-        print(result)
+
+        # Create an object of the GCD class.
+        gcd_calculator = GCD()
+
+        # Find the GCD of the two numbers.
+        result = gcd_calculator.find_gcd(num1, num2)
+
+        # Display the result.
+        print("The GCD is:", result)
+
     else:
-        #print an error if any number is zero or negitive
-        print('the number must be positive')
+
+        # Display an error if either number is zero or negative.
+        print("The numbers must be positive.")
+
 else:
-    #print an error message if the input has non digital characters
-    print('the number is invalid')
-    
+
+    # Display an error if the input contains non-numeric characters.
+    print("Invalid input. Please enter positive integers.")
     
     
 
